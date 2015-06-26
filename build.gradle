@@ -1,0 +1,21 @@
+apply plugin: 'war'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile "javax.servlet:javax.servlet-api:3.0.1"
+
+    compile 'org.springframework:spring-webmvc:4.0.5.RELEASE'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.3.3'
+    runtime 'org.aspectj:aspectjweaver:1.7.2'
+}
+
+war {
+    archiveName 'ROOT.war'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
+}
